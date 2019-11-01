@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bright Lights! Big City!</title>
+    <link href="style.css">
+</head>
+<body>
+    <div class="sign-up-page">
+
+        <h1>Sign Up</h1>
+
+        <p>
+            Start planning your life in the big city!
+        </p>
+
+        <form class="sign-up-form">
+
+            <input class="email-input" type="text" placeholder="E-mail" autocomplete="on" value="">
+
+            <input class="password-input" type="password" placeholder="Password">
+            
+            <input class="sign-up-submit" type="submit" value="Get Started!">
+
+        </form>
+
+    </div>
+
+    <div class="questionaire-page hidden">
+
+        <form>
+            What city are you interested in moving to?
+            <input class="city-input" type="text" placeholder="Ex: Los Angeles" autocomplete="on">
+            Are you planning on having a roomate? How many bedrooms will you you need?
+            <input class="number-of-bedrooms" type="number" value="2">
+            What job title are you planning to hold in this new city?
+            <input class="job-title" type="text" placeholder="Ex: Registered Nurse" autocomplete="on">
+
+        </form>
+
+    </div>
+
+    <div class="model-page hidden">
+
+        <h1>Ready for life in the big city?</h1>
+
+        <div class="rent-per-room">
+            <label class="js-rent-per-room">
+                This is how much each room will cost in a ${chosen-number} bedroom apartment in ${chosen-city}
+            </label>
+            
+            <table class="table-of-apartments">
+                <tr>
+                    <th>
+                        Studio Apartment
+                    </th>
+                        
+                    <th>
+                        1 Bedroom Apartment
+                    </th>
+
+                    <th>
+                        2 Bedroom Apartment    
+                    </th>
+
+                    <th>
+                        3 Bedroom Apartment
+                    </th>
+                </tr>
+
+                <tr>
+                    <td>
+                        ${$x,xxx}
+                    </td>
+                        
+                    <td>
+                        ${$x,xxx}
+                    </td>
+
+                    <td>
+                        ${$x,xxx}
+                    </td>
+    
+                    <td>
+                        ${$x,xxx}
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="bls-stats">
+
+            <label class="bls-stats-label">
+                According to the Bureau of Labor Statistics:
+            </label>
+
+            <table class="table-of-apartments">
+
+                <tr>
+                    <th>
+                        Number of available jobs for ${job-title} is:
+                    </th>
+                        
+                    <th>
+                        The median annual income is:
+                    </th>
+
+                    <th>
+                        Job growth for this is:
+                    </th>
+
+                </tr>
+    
+                <tr>
+                    <td>
+                        ${xx,xxx}
+                    </td>
+                            
+                    <td>
+                        ${$xx,xxx}
+                    </td>
+
+                    <td>
+                        Projected at ${bls-stats.projected-growth}
+                    </td>
+    
+                </tr>
+    
+            </table>
+    
+
+        </div>
+
+        <div class="weather-details">
+
+            <label class="current-weather">
+                The current weather in ${chosen-city} is ${weatherAPI.current-temp}
+            </label>
+
+            <label class="weather-averages">
+                
+                <table class="average-weather-table">
+
+                    <tr>
+                        <th>
+                            The average tempurature for Spring is:
+                        </th>
+                                    
+                        <th>
+                            The average tempurature for Summer is:
+                        </th>
+        
+                        <th>
+                            The average tempurature for Autumn is:
+                        </th>
+
+                        <th>
+                            The average tempurature for Winter is:
+                        </th>
+        
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            A High of ${spring.high} & A Low of ${spring.low}
+                        </td>
+                                
+                        <td>
+                            A High of ${summer.high} & A Low of ${summer.low}
+                        </td>
+        
+                        <td>
+                            A High of ${autumn.high} & A Low of ${autumn.low}
+                        </td>
+
+                        <td>
+                            A High of ${winter.high} & A Low of ${winter.low}
+                        </td>
+            
+                    </tr>
+
+                </table>
+
+            </label>
+
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+    </script>
+
+    <script src="script.js">
+    </script>
+
+</body>
+
+</html>
