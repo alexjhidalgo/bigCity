@@ -5,53 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Bright Lights! Big City!</title>
-    <link href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="sign-up-page">
+    <div class="signUpPage">
 
-        <h1>Sign Up</h1>
+        <h1>Let's start with your name</h1>
 
         <p>
             Start planning your life in the big city!
         </p>
 
-        <form class="sign-up-form">
+        <form class="signUpForm">
 
-            <input class="email-input" type="text" placeholder="E-mail" autocomplete="on" value="">
+            <input id="nameInput" type="text" placeholder="Name" autocomplete="on" value="">
 
-            <input class="password-input" type="password" placeholder="Password">
+            <!-- <input id="cityInput" type="city" placeholder="Ex: Los Angeles"> -->
             
-            <input class="sign-up-submit" type="submit" value="Get Started!">
+            <input id="signUpSubmit" type="submit" value="Get Started!">
 
         </form>
 
     </div>
 
-    <div class="questionaire-page hidden">
+    <div class="questionairePage hidden">
 
-        <form>
-            What city are you interested in moving to?
-            <input class="city-input" type="text" placeholder="Ex: Los Angeles" autocomplete="on">
-            Are you planning on having a roomate? How many bedrooms will you you need?
-            <input class="number-of-bedrooms" type="number" value="2">
+        <div id="nameAndCityBanner">
+
+        </div>
+
+        <form class="questionaireForm">
+             What city are you interested in moving to?
+        <!--    <input class="cityInput" type="text" placeholder="Ex: Los Angeles" autocomplete="on"> -->
+            <input id="cityInput" type="text" placeholder="Ex: Los Angeles">
+
+            If you are planning on having a roomate, how many bedrooms will your home need?
+            <input id="numberOfBedrooms" type="number" placeholder="Studio = 0">
+
             What job title are you planning to hold in this new city?
-            <input class="job-title" type="text" placeholder="Ex: Registered Nurse" autocomplete="on">
+            <input id="jobTitle" type="text" placeholder="Ex: Registered Nurse" autocomplete="on">
+
+            <input id="questionaireSubmit" type="submit" value="Let's Go!">
 
         </form>
 
     </div>
 
-    <div class="model-page hidden">
+    <div class="modelPage hidden">
 
         <h1>Ready for life in the big city?</h1>
 
-        <div class="rent-per-room">
-            <label class="js-rent-per-room">
+        <div class="rentPerRoom">
+            <label class="jsRentPerRoom">
                 This is how much each room will cost in a ${chosen-number} bedroom apartment in ${chosen-city}
             </label>
             
-            <table class="table-of-apartments">
+            <table class="tableOfApartments">
                 <tr>
                     <th>
                         Studio Apartment
@@ -93,13 +102,13 @@
 
         </div>
 
-        <div class="bls-stats">
+        <div class="blsStats">
 
-            <label class="bls-stats-label">
+            <label class="blsStatsLabel">
                 According to the Bureau of Labor Statistics:
             </label>
 
-            <table class="table-of-apartments">
+            <table class="tableOfJobs">
 
                 <tr>
                     <th>
@@ -136,15 +145,15 @@
 
         </div>
 
-        <div class="weather-details">
+        <div class="weatherDetails">
 
-            <label class="current-weather">
+            <label id="currentWeather">
                 The current weather in ${chosen-city} is ${weatherAPI.current-temp}
             </label>
 
-            <label class="weather-averages">
+            <!-- <label class="weatherAverages">
                 
-                <table class="average-weather-table">
+                <table id="averageWeatherTable">
 
                     <tr>
                         <th>
@@ -186,7 +195,8 @@
 
                 </table>
 
-            </label>
+            </label> -->
+
 
         </div>
 
