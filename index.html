@@ -40,11 +40,11 @@
         <!--    <input class="cityInput" type="text" placeholder="Ex: Los Angeles" autocomplete="on"> -->
             <input id="cityInput" type="text" placeholder="Ex: Los Angeles">
 
-            If you are planning on having a roomate, how many bedrooms will your home need?
+            <!-- If you are planning on having a roomate, how many bedrooms will your home need?
             <input id="numberOfBedrooms" type="number" placeholder="Studio = 0">
 
             What job title are you planning to hold in this new city?
-            <input id="jobTitle" type="text" placeholder="Ex: Registered Nurse" autocomplete="on">
+            <input id="jobTitle" type="text" placeholder="Ex: Registered Nurse" autocomplete="on"> -->
 
             <input id="questionaireSubmit" type="submit" value="Let's Go!">
 
@@ -112,30 +112,30 @@
             <table class="tableOfJobs">
 
                 <tr>
-                    <th>
+                    <th id="numberOfJobsKey">
                         Number of available jobs for ${job-title} is:
                     </th>
                         
-                    <th>
+                    <th id="medianIncomeKey">
                         The median annual income is:
                     </th>
 
-                    <th>
+                    <th id="jobGrowthKey">
                         Job growth for this is:
                     </th>
 
                 </tr>
     
                 <tr>
-                    <td>
+                    <td id="numberOfJobsValue">
                         ${xx,xxx}
                     </td>
                             
-                    <td>
+                    <td id="medianIncomeValue">
                         ${$xx,xxx}
                     </td>
 
-                    <td>
+                    <td id="jobGrowthValue">
                         Projected at ${bls-stats.projected-growth}
                     </td>
     
@@ -152,7 +152,7 @@
                 The current weather in ${chosen-city} is ${weatherAPI.current-temp}
             </label>
 
-            <!-- <label class="weatherAverages">
+            <label class="weatherAverages">
                 
                 <table id="averageWeatherTable">
 
@@ -196,7 +196,7 @@
 
                 </table>
 
-            </label> -->
+            </label>
 
 
         </div>

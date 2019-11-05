@@ -32,10 +32,10 @@ function validateQuestionaireForm(){
     $('.questionaireForm').on('submit', function(){
         event.preventDefault();
         let cityInput = document.getElementById('cityInput').value;
-        let numberOfBedrooms = document.getElementById('numberOfBedrooms').value;
-        let job = document.getElementById('jobTitle').value;
+        // let numberOfBedrooms = document.getElementById('numberOfBedrooms').value; 
+        // let job = document.getElementById('jobTitle').value;
         //perhaps use an if/or statement to make sure numberOfRooms is between 0-3 (/[^0-3/g)
-        getEmploymentData(job);
+        // getEmploymentData(job);
         getLatAndLong(cityInput)
         
         console.log('function validateQuestionaireForm() ran');
@@ -62,9 +62,9 @@ function getLatAndLong(cityInput){
     .then(responseJson => {
         let latt = responseJson.latt;
         let longt = responseJson.longt;
-        getCityWeatherData(latt, longt, cityInput);
-        let zState = responseJson.state_code;
-        getRentalPriceData(cityForURL, numberOfBedrooms, zState);
+        getCityWeatherData(latt, longt, cityInput, cityForURL);
+        
+
         console.log(responseJson);
      } );
      
@@ -72,7 +72,7 @@ function getLatAndLong(cityInput){
     console.log('function getLatAndLong() ran');
 }
 
-function getCityWeatherData(latt, longt, cityInput){
+function getCityWeatherData(latt, longt, cityInput, cityForURL){
     
     let baseURLWeather = 'https://api.weatherbit.io/v2.0/current';
     let weatherAPIKey = '43212f971ccf447091711593c0157ad4';
@@ -81,7 +81,12 @@ function getCityWeatherData(latt, longt, cityInput){
 
     fetch(forecastRequest)
     .then(response => response.json() )
-    .then(responseJson => fillWeatherDetails(responseJson, cityInput) );
+    .then(responseJson => {
+        fillWeatherDetails(responseJson, cityInput);
+        let zState = responseJson.data[0].state_code;
+        getRentalPriceData(cityForURL, zState);
+        console.log(zState);
+    });
 
     console.log('function getCityWeatherData(cityInput) ran');
 }
@@ -92,10 +97,10 @@ function fillWeatherDetails(responseJson, cityInput){
     $('#currentWeather').append(`
     The current temperature in ${cityInput} is ${displayTemp}
     `)
-    // let spring = "";
-    // let summer = "";
-    // let autumn = "";
-    // let winter = "";
+    let spring = "";
+    let summer = "";
+    let autumn = "";
+    let winter = "";
 
     moveToModelPage();
 
@@ -129,24 +134,31 @@ function getBLSCodes(){
 
 // https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000015113001?registrationkey=9a3d2a4bbc27437eb9e632670aefb4cf
 // https://api.bls.gov/publicAPI/v2/timeseries/data/LAUCN040010000000005?registrationkey=9a3d2a4bbc27437eb9e632670aefb4cf
-function getRentalPriceData(cityForURL, numberOfBedrooms, zState){
-    let zillowBaseURL = 'https://www.zillow.com/webservice/GetRegionChildren.htm';
-    let zwsidKey = 'X1-ZWz1hgfqxwr7yj_2qbsp';
-    let zillowURL = zillowBaseURL + '?' + 'zws-id=' + zwsidKey + '&' + 'state=' + zState + '&' + 'city=' + cityForURL;
-    console.log(zillowURL);
+
+
+function getRentalPriceData(cityForURL, zState){
+    // let zillowBaseURL = 'https://www.zillow.com/webservice/GetRegionChildren.htm';
+    // let zwsidKey = 'X1-ZWz1hgfqxwr7yj_2qbsp';
+    // let zillowURL = zillowBaseURL + '?' + 'zws-id=' + zwsidKey + '&' + 'state=' + zState + '&' + 'city=' + cityForURL;
+    // console.log(zillowURL);
     // city=seattle&childtype=neighborhood
-    fetch(zillowURL)
-    let studio = "";
-    let bdrm1 = "";
-    let bdrm2 = "";
-    let bdrm3 = "";
+    // fetch(zillowURL)
+    // let studio = "";
+    // let bdrm1 = "";
+    // let bdrm2 = "";
+    // let bdrm3 = "";
+
 }
 
 function getEmploymentData(job){
-
+    let jobMinimized = job.value
     let jobNums = "";
     let medIncome = "";
     let jobGrowth = "";
+}
+
+function addStoreData(){
+
 }
 
 function moveToModelPage(){
