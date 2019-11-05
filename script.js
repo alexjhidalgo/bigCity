@@ -102,6 +102,33 @@ function fillWeatherDetails(responseJson, cityInput){
     console.log('function fillWeatherDetails() ran');
 }
 
+
+
+
+
+
+function getBLSCodes(){
+
+    fetch({"seriesid": ['CUUR0000SA0','SUUR0000SA0'],"startyear":"2011", "endyear":"2014"})
+
+    let stateCode = responseJson.stateOf(cityInput) //pseudocode
+
+    let nationalCompURL = 'NCU'  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// https://api.bls.gov/publicAPI/v2/timeseries/data/OEUN000000000000015113001?registrationkey=9a3d2a4bbc27437eb9e632670aefb4cf
+// https://api.bls.gov/publicAPI/v2/timeseries/data/LAUCN040010000000005?registrationkey=9a3d2a4bbc27437eb9e632670aefb4cf
 function getRentalPriceData(cityForURL, numberOfBedrooms, zState){
     let zillowBaseURL = 'https://www.zillow.com/webservice/GetRegionChildren.htm';
     let zwsidKey = 'X1-ZWz1hgfqxwr7yj_2qbsp';
