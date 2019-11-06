@@ -42,7 +42,7 @@ const STORE = {
         //         ]}
         //     ]}
         // ]},
-        {newYork: [
+        {[
             {stateAbbreviation : 'NY'},
             {city: [
                 {name: [
@@ -154,11 +154,11 @@ const STORE = {
         ]},
         {illinois: [
             {stateAbbreviation : 'IL'},
-            {regionSeriesCode : '0016980'},
             {city: [
                 {name: [
                     {is : 'chicago'},
                     {averageRent:'$1,021'},
+                    {regionSeriesCode : '0016980'},
                     {jobs: [
                         {softwareEngineer: '$90,000'},
                         {registeredNurse: '$66,000'},
