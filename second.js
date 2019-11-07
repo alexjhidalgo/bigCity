@@ -41,7 +41,8 @@ function getLatAndLong(cityInput){
         let longt = responseJson.longt;
         getCityWeatherData(latt, longt, cityInput, cityForURL);
         console.log(responseJson);
-     } );
+     })
+     .catch(error => alert('Something went wrong! Make sure the city is spelled correctly, or try typing city name a different way. Sometimes the server gets too many requests right now, so just keep trying.'));
     console.log('function getLatAndLong() ran');
 }
 function getCityWeatherData(latt, longt, cityInput, ){
@@ -54,7 +55,8 @@ function getCityWeatherData(latt, longt, cityInput, ){
         let stateCodeInput = responseJson.data[0].state_code;
         fillWeatherDetails(responseJson, cityInput);
         findJSState(stateCodeInput, cityInput);
-    });
+    })
+    .catch(error => alert('Something went wrong! Make sure the city is in the United States and one of the 22 most populous cities. Sometimes the server gets too many requests right now, so just keep trying.'));
     console.log('function getCityWeatherData(cityInput) ran');
 }
 function fillWeatherDetails(responseJson, cityInput){
@@ -148,55 +150,64 @@ function getBLSData(areaCode){
         .then(responseJson => {
             let rnSalary = responseJson.Results.series[0].data[0].value;
             addRNSalaryToModel(rnSalary);
-        });
+        })
+        .catch(error => alert('Something went wrong!'));
     fetch(sweMedianSalary)
         .then(response => response.json() )
         .then(responseJson => {
             let sweSalary = responseJson.Results.series[0].data[0].value;
             addSWESalaryToModel(sweSalary);
-        });
+        })
+        .catch(error => alert('Something went wrong!'));
     fetch(faMedianSalary)
         .then(response => response.json() )
         .then(responseJson => {
             let faSalary = responseJson.Results.series[0].data[0].value;
             addFASalaryToModel(faSalary);
-        });
+        })
+        .catch(error => alert('Something went wrong!'));
     fetch(rnsWorkingPer1000Jobs)
         .then(response => response.json() )
         .then(responseJson => {
             let rnsPer1000 = responseJson.Results.series[0].data[0].value;
             addRNEmploymentToModel(rnsPer1000);
-        });
+        })
+        .catch(error => alert('Something went wrong!'));
     fetch(swesWorkingPer1000Jobs)
         .then(response => response.json() )
         .then(responseJson => {
             let swesPer1000 = responseJson.Results.series[0].data[0].value;
             addSWEEmploymentToModel(swesPer1000);
-        });
+        })
+        .catch(error => alert('Something went wrong!'));
     fetch(fasWorkingPer1000Jobs)
         .then(response => response.json() )
         .then(responseJson => {
             let fasPer1000 = responseJson.Results.series[0].data[0].value;
             addFAEmploymentToModel(fasPer1000);
-        });
+        })
+        .catch(error => alert('Something went wrong!'));
     fetch(rnJobs)
         .then(response => response.json() )
         .then(responseJson => {
             let rnJobsNum = responseJson.Results.series[0].data[0].value;
             addRNJobsNumToModel(rnJobsNum);
-        });
+        })
+        .catch(error => alert('Something went wrong!'));
     fetch(sweJobs)
         .then(response => response.json() )
         .then(responseJson => {
             let sweJobsNum = responseJson.Results.series[0].data[0].value;
             addSWEJobsNumToModel(sweJobsNum);
-        });
+        })
+        .catch(error => alert('Something went wrong!'));
     fetch(faJobs)
         .then(response => response.json() )
         .then(responseJson => {
             let faJobsNum = responseJson.Results.series[0].data[0].value;
             addFAJobsNumToModel(faJobsNum);
-        });
+        })
+        .catch(error => alert('Something went wrong!'));
     console.log('function getBLSData() ran');
 }
 function addRNSalaryToModel(rnSalary){

@@ -23,6 +23,7 @@ h1 {
     line-height: 40px;
     display: flex;
     color:rgb(90, 111, 205);
+    margin-top: 55px;
 }
 .cityImages > img{
     display: flexbox;
@@ -212,6 +213,7 @@ span{
         line-height: 40px;
         display: flex;
         color:rgb(90, 111, 205);
+        margin-top: 55px;
     }
     .cityImages > img{
         display: flexbox;
@@ -403,6 +405,7 @@ span{
         display: flex;
         color:rgb(90, 111, 205);
         justify-content: center;
+        margin-top: 55px;
 
     }
     .cityImages > img{
@@ -555,8 +558,8 @@ span{
     }
     .modelPage h1{
         font-family: sans-serif;
-        font-size: 36px;
-        line-height: 44px;
+        font-size: 32px;
+        line-height: 40px;
         display: flex;
         color:rgb(90, 111, 205);
     }
