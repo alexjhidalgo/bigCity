@@ -56,8 +56,8 @@
 
         <h1>Ready for life in the big city?</h1>
 
-        <div class="rentPerRoom">
-            
+        <div class="averageRent">
+
             <!-- <label class="jsRentPerRoom">
                 This is how much each room will cost in a ${chosen-number} bedroom apartment in ${chosen-city}
             </label>
@@ -110,33 +110,96 @@
                 According to the Bureau of Labor Statistics:
             </label>
 
-            <table class="tableOfJobs">
+            <table class="tablesOfJobs">
 
                 <tr>
-                    <th id="numberOfJobsKey">
-                        Number of available jobs for ${job-title} is:
-                    </th>
-                        
-                    <th id="medianIncomeKey">
-                        The median annual income is:
+                    <th id="meanIncomeKey1">
+                        The mean annual income for a Registered Nurse in is:
                     </th>
 
-                    <th id="jobGrowthKey">
-                        Job growth for this is:
+                    <th id="numberOfJobsKey1">
+                        Their number of available jobs is:
+                    </th>
+
+                    <th id="employmentKey1">
+                        And the percentage of these positions that are filled is:
+                    </th>
+
+
+
+                    <th id="meanIncomeKey2">
+                        The mean annual income for a Software Developer in is:
+                    </th>
+
+                    <th id="numberOfJobsKey2">
+                        Their number of available jobs is:
+                    </th>
+
+                    <th id="employmentKey2">
+                        And the percentage of these positions that are filled is:
+                    </th>
+
+
+                        
+                    <th id="meanIncomeKey3">
+                        The mean annual income for a Financial Analyst in is:
+                    </th>
+
+                    <th id="numberOfJobsKey3">
+                        Their number of available jobs is:
+                    </th>
+
+                    <th id="employmentKey3">
+                        And the percentage of these positions that are filled is:
                     </th>
 
                 </tr>
     
+
+
+
+
+
+
                 <tr>
-                    <td id="numberOfJobsValue">
-                        ${xx,xxx}
-                    </td>
-                            
-                    <td id="medianIncomeValue">
+                                                
+                    <td id="meanIncomeValue1">
                         ${$xx,xxx}
                     </td>
 
-                    <td id="jobGrowthValue">
+                    <td id="numberOfJobsValue1">
+                        ${xx,xxx}
+                    </td>
+
+                    <td id="employmentValue1">
+                        Projected at ${bls-stats.projected-growth}
+                    </td>
+
+
+                                                
+                    <td id="meanIncomeValue2">
+                        ${$xx,xxx}
+                    </td>
+
+                    <td id="numberOfJobsValue2">
+                        ${xx,xxx}
+                    </td>
+
+                    <td id="employmentValue2">
+                        Projected at ${bls-stats.projected-growth}
+                    </td>
+
+
+                            
+                    <td id="meanIncomeValue3">
+                            ${$xx,xxx}
+                    </td>
+    
+                    <td id="numberOfJobsValue3">
+                        ${xx,xxx}
+                    </td>
+
+                    <td id="employmentValue3">
                         Projected at ${bls-stats.projected-growth}
                     </td>
     
@@ -158,39 +221,39 @@
                 <table id="averageWeatherTable">
 
                     <tr>
-                        <th>
-                            The average tempurature for Spring is:
+                        <th id="askSummerHigh">
+                            The average high tempurature for ${city} in July is:
                         </th>
                                     
-                        <th>
-                            The average tempurature for Summer is:
+                        <th id="askSummerLow">
+                            The average Low tempurature is:
                         </th>
         
-                        <th>
-                            The average tempurature for Autumn is:
+                        <th id="askWinterHigh">
+                            The average high tempurature for ${city} in January is:
                         </th>
 
-                        <th>
-                            The average tempurature for Winter is:
+                        <th id="askWinterLow">
+                            The average low tempurature is:
                         </th>
         
                     </tr>
                 
                     <tr>
-                        <td>
-                            A High of ${spring.high} & A Low of ${spring.low}
+                        <td id="summerHigh">
+
                         </td>
                                 
-                        <td>
-                            A High of ${summer.high} & A Low of ${summer.low}
+                        <td id="summerLow">
+
                         </td>
         
-                        <td>
-                            A High of ${autumn.high} & A Low of ${autumn.low}
+                        <td id="winterHigh">
+
                         </td>
 
-                        <td>
-                            A High of ${winter.high} & A Low of ${winter.low}
+                        <td id="winterLow">
+
                         </td>
             
                     </tr>
@@ -207,7 +270,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
     </script>
 
-    <script src="script.js">
+    <script src="second.js">
     </script>
 
 </body>
