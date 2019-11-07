@@ -5,7 +5,974 @@
 .hidden {
     display: none;
 } 
-
-/* h1 {
-    font-size: ;
+/* .signUpPage{
+    display: none;
+}
+.questionairePage{
+    display: none;
+}
+.modelPage{
+    display: none;
 } */
+html{
+    background-color: rgb(240, 233, 135);
+}
+h1 {
+    font-family: sans-serif;
+    font-size: 32px;
+    line-height: 40px;
+    display: flex;
+    color:rgb(90, 111, 205);
+}
+.cityImages > img{
+    display: flexbox;
+    width: 80px;
+    height: 60px;
+    margin: 5px;
+}
+p {
+    font-family: sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+    display: flexbox;
+    color:rgb(90, 111, 205);
+    margin: 20px;
+}
+.signUpPage {
+    display: flexbox;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-left: 8%;
+    margin-right: 8%;
+}
+.signUpForm > input{
+    display: flexbox;
+    flex-wrap: wrap;
+    border: solid grey 1px;
+    margin: 3px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-family: serif;
+    height: 35px;
+    width: 210px;
+
+}
+.signUpSubmit > input{
+    display: flexbox;
+    flex-wrap: wrap;
+    background: rgb(90, 111, 205);
+    border: solid grey 1px;
+    margin: 3px;
+    margin-bottom: 50px;
+    font-size: 16px;
+    font-family: serif;
+    color: yellow;
+    height: 35px;
+    width: 110px;
+}
+
+/* Questionairepage below */
+
+.questionairePage {
+    display: flexbox;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-left: 8%;
+    margin-right: 8%;
+}
+.questionaireForm > input{
+    display: flexbox;
+    flex-wrap: wrap;
+    border: solid grey 1px;
+    margin: 3px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-family: serif;
+    height: 35px;
+    width: 210px;
+
+}
+.questionaireSubmit > input{
+    display: flexbox;
+    flex-wrap: wrap;
+    background: rgb(90, 111, 205);
+    border: solid grey 1px;
+    margin: 3px;
+    margin-bottom: 50px;
+    font-size: 16px;
+    font-family: serif;
+    color: yellow;
+    height: 35px;
+    width: 110px;
+}
+.questionairePage > p{
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: 700;
+}
+input:hover{
+    border: groove orange 3px;
+}
+/* Model page below */
+.modelPage{
+    margin-left: 8%;
+    margin-right: 8%;
+}
+label{
+    font-family: sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+table, th, td{
+    border: solid black 1px;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+th{
+    font-family: sans-serif;
+    font-size: 16px;
+    height: 60px;
+    padding: 3px;
+    text-align: left;
+    background-color: rgb(146, 155, 196);
+    
+}
+td{
+    font-family: serif;
+    font-size: 16px;
+    height: 30px;
+    padding: 3px;
+    text-align: left;
+    background-color: #f5f5f5;
+}
+span{
+    color: red;
+}
+.averageRent{
+    font-family: sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+    color: black;
+    margin-top: 100px;
+    margin-bottom: 40px;
+
+}
+.bigMoney{
+    font-size: larger;
+    color: black;
+}
+.modelPage h1{
+    font-family: sans-serif;
+    font-size: 36px;
+    line-height: 44px;
+    display: flex;
+    color:rgb(90, 111, 205);
+}
+.headerdivider {
+    border-top: 1px groove rgb(231, 221, 72);
+    border-bottom: 1px groove rgb(231, 221, 72);
+    width: 90%;
+    height: 1px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cityOfChoice{
+    font-family: sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+    color:black;
+}
+@media screen and (min-width:420px)and (max-width:580px){
+
+    .hidden {
+        display: none;
+    } 
+    /* .signUpPage{
+        display: none;
+    }
+    .questionairePage{
+        display: none;
+    }
+    .modelPage{
+        display: none;
+    } */
+    html{
+        background-color: rgb(240, 233, 135);
+    }
+    h1 {
+        font-family: sans-serif;
+        font-size: 32px;
+        line-height: 40px;
+        display: flex;
+        color:rgb(90, 111, 205);
+    }
+    .cityImages > img{
+        display: flexbox;
+        width: 100px;
+        height: 80px;
+        margin: 5px;
+    }
+    p {
+        font-family: sans-serif;
+        font-size: 20px;
+        line-height: 24px;
+        display: flexbox;
+        color:rgb(90, 111, 205);
+        margin: 20px;
+    }
+    .signUpPage {
+        display: flexbox;
+        flex-wrap: wrap;
+        text-align: center;
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+    .signUpForm > input{
+        display: flexbox;
+        flex-wrap: wrap;
+        border: solid grey 1px;
+        margin: 3px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        font-family: serif;
+        height: 35px;
+        width: 210px;
+    
+    }
+    .signUpSubmit > input{
+        display: flexbox;
+        flex-wrap: wrap;
+        background: rgb(90, 111, 205);
+        border: solid grey 1px;
+        margin: 3px;
+        margin-bottom: 50px;
+        font-size: 16px;
+        font-family: serif;
+        color: yellow;
+        height: 35px;
+        width: 110px;
+    }
+    
+    /* Questionairepage below */
+    
+    .questionairePage {
+        display: flexbox;
+        flex-wrap: wrap;
+        text-align: center;
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+    .questionaireForm > input{
+        display: flexbox;
+        flex-wrap: wrap;
+        border: solid grey 1px;
+        margin: 3px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        font-family: serif;
+        height: 35px;
+        width: 210px;
+    
+    }
+    .questionaireSubmit > input{
+        display: flexbox;
+        flex-wrap: wrap;
+        background: rgb(90, 111, 205);
+        border: solid grey 1px;
+        margin: 3px;
+        margin-bottom: 50px;
+        font-size: 16px;
+        font-family: serif;
+        color: yellow;
+        height: 35px;
+        width: 110px;
+    }
+    .questionairePage > p{
+        font-size: 28px;
+        line-height: 36px;
+        font-weight: 700;
+    }
+    input:hover{
+        border: groove orange 3px;
+    }
+    /* Model page below */
+    .modelPage{
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+    label{
+        font-family: sans-serif;
+        font-size: 20px;
+        line-height: 24px;
+    }
+    
+    table, th, td{
+        border: solid black 1px;
+    }
+    table{
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    th{
+        font-family: sans-serif;
+        font-size: 16px;
+        height: 60px;
+        padding: 3px;
+        text-align: left;
+        background-color: rgb(146, 155, 196);
+        
+    }
+    td{
+        font-family: serif;
+        font-size: 16px;
+        height: 30px;
+        padding: 3px;
+        text-align: left;
+        background-color: #f5f5f5;
+    }
+    span{
+        color: red;
+    }
+    .averageRent{
+        font-family: sans-serif;
+        font-size: 20px;
+        line-height: 24px;
+        color: black;
+        margin-top: 100px;
+        margin-bottom: 40px;
+    
+    }
+    .bigMoney{
+        font-size: larger;
+        color: black;
+    }
+    .modelPage h1{
+        font-family: sans-serif;
+        font-size: 36px;
+        line-height: 44px;
+        display: flex;
+        color:rgb(90, 111, 205);
+    }
+    .headerdivider {
+        border-top: 1px groove rgb(231, 221, 72);
+        border-bottom: 1px groove rgb(231, 221, 72);
+        width: 90%;
+        height: 1px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .cityOfChoice{
+        font-family: sans-serif;
+        font-size: 20px;
+        line-height: 24px;
+        color:black;
+    }
+}
+@media screen and (min-width:580px) and (max-width:860px){
+    
+    .hidden {
+        display: none;
+    } 
+    /* .signUpPage{
+        display: none;
+    }
+    .questionairePage{
+        display: none;
+    }
+    .modelPage{
+        display: none;
+    } */
+    html{
+        background-color: rgb(240, 233, 135);
+    }
+    h1 {
+        font-family: sans-serif;
+        font-size: 32px;
+        line-height: 40px;
+        display: flex;
+        color:rgb(90, 111, 205);
+        justify-content: center;
+
+    }
+    .cityImages > img{
+        display: flexbox;
+        width: 140px;
+        height: 120px;
+        margin: 5px;
+        margin-bottom: 50px;
+        margin-top: 50px;
+    }
+    p {
+        font-family: sans-serif;
+        font-size: 24px;
+        line-height: 30px;
+        display: flexbox;
+        color:rgb(90, 111, 205);
+        margin: 20px;
+    }
+    .signUpPage {
+        display: flexbox;
+        flex-wrap: wrap;
+        text-align: center;
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+    .signUpForm > input{
+        display: flexbox;
+        flex-wrap: wrap;
+        border: solid grey 1px;
+        margin: 3px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        font-family: serif;
+        height: 35px;
+        width: 210px;
+    
+    }
+    .signUpSubmit > input{
+        display: flexbox;
+        flex-wrap: wrap;
+        background: rgb(90, 111, 205);
+        border: solid grey 1px;
+        margin: 3px;
+        margin-bottom: 50px;
+        font-size: 16px;
+        font-family: serif;
+        color: yellow;
+        height: 35px;
+        width: 110px;
+    }
+    
+    /* Questionairepage below */
+    
+    .questionairePage {
+        display: flexbox;
+        flex-wrap: wrap;
+        text-align: center;
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+    .questionaireForm > input{
+        display: flexbox;
+        flex-wrap: wrap;
+        border: solid grey 1px;
+        margin: 3px;
+        margin-top: 50px;
+        margin-bottom: 30px;
+        font-size: 16px;
+        font-family: serif;
+        height: 35px;
+        width: 210px;
+    
+    }
+    .questionaireSubmit > input{
+        display: flexbox;
+        flex-wrap: wrap;
+        background: rgb(90, 111, 205);
+        border: solid grey 1px;
+        margin: 3px;
+        margin-bottom: 50px;
+        font-size: 16px;
+        font-family: serif;
+        color: yellow;
+        height: 35px;
+        width: 110px;
+    }
+    .questionairePage > p{
+        font-size: 28px;
+        line-height: 36px;
+        font-weight: 700;
+    }
+    input:hover{
+        border: groove orange 3px;
+    }
+    /* Model page below */
+    .modelPage{
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+    label{
+        font-family: sans-serif;
+        font-size: 20px;
+        line-height: 24px;
+    }
+    #currentWeather{
+        display: flex;
+        justify-content: center;
+    }
+    table, th, td{
+        border: solid black 1px;
+    }
+    table{
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    th{
+        font-family: sans-serif;
+        font-size: 16px;
+        height: 60px;
+        padding: 3px;
+        text-align: left;
+        background-color: rgb(146, 155, 196);
+        
+    }
+    td{
+        font-family: serif;
+        font-size: 16px;
+        height: 30px;
+        padding: 3px;
+        text-align: left;
+        background-color: #f5f5f5;
+    }
+    span{
+        color: red;
+    }
+    .averageRent{
+        font-family: sans-serif;
+        font-size: 20px;
+        line-height: 24px;
+        color: black;
+        text-align: center;
+        margin-top: 100px;
+        margin-bottom: 40px;
+    }
+    .bigMoney{
+        font-size: larger;
+        color: black;
+    }
+    .modelPage h1{
+        font-family: sans-serif;
+        font-size: 36px;
+        line-height: 44px;
+        display: flex;
+        color:rgb(90, 111, 205);
+    }
+    .headerdivider {
+        border-top: 1px groove rgb(231, 221, 72);
+        border-bottom: 1px groove rgb(231, 221, 72);
+        width: 90%;
+        height: 1px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .cityOfChoice{
+        font-family: sans-serif;
+        font-size: 20px;
+        line-height: 24px;
+        color:black;
+    }
+}
+@media screen and (min-width:860px) and (max-width:1024px){
+    
+    .hidden {
+        display: none;
+    } 
+    /* .signUpPage{
+        display: none;
+    }
+    .questionairePage{
+        display: none;
+    }
+    .modelPage{
+        display: none;
+    } */
+    html{
+        background-color: rgb(240, 233, 135);
+    }
+    h1 {
+        font-family: sans-serif;
+        font-size: 36px;
+        line-height: 44px;
+        display: flex;
+        color:rgb(90, 111, 205);
+        justify-content: center;
+        margin-top: 55px;
+
+    }
+    .cityImages > img{
+        display: flexbox;
+        width: 200px;
+        height: 160px;
+        margin: 5px;
+        margin-bottom: 50px;
+        margin-top: 50px;
+    }
+    p {
+        font-family: sans-serif;
+        font-size: 30px;
+        line-height: 38px;
+        display: flexbox;
+        color:rgb(90, 111, 205);
+        margin: 20px;
+    }
+    .signUpPage {
+        display: flexbox;
+        flex-wrap: wrap;
+        text-align: center;
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+    .signUpForm > input{
+        display: flexbox;
+        flex-wrap: wrap;
+        border: solid grey 1px;
+        margin: 3px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        font-family: serif;
+        height: 35px;
+        width: 210px;
+    
+    }
+    .signUpSubmit > input{
+        display: flexbox;
+        flex-wrap: wrap;
+        background: rgb(90, 111, 205);
+        border: solid grey 1px;
+        margin: 3px;
+        margin-bottom: 50px;
+        font-size: 16px;
+        font-family: serif;
+        color: yellow;
+        height: 35px;
+        width: 110px;
+    }
+    
+    /* Questionairepage below */
+    
+    .questionairePage {
+        display: flexbox;
+        flex-wrap: wrap;
+        text-align: center;
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+    .questionaireForm > input{
+        display: flexbox;
+        flex-wrap: wrap;
+        border: solid grey 1px;
+        margin: 3px;
+        margin-top: 50px;
+        margin-bottom: 30px;
+        font-size: 16px;
+        font-family: serif;
+        height: 35px;
+        width: 210px;
+    
+    }
+    .questionaireSubmit > input{
+        display: flexbox;
+        flex-wrap: wrap;
+        background: rgb(90, 111, 205);
+        border: solid grey 1px;
+        margin: 3px;
+        margin-bottom: 50px;
+        font-size: 16px;
+        font-family: serif;
+        color: yellow;
+        height: 35px;
+        width: 110px;
+    }
+    .questionairePage > p{
+        font-size: 28px;
+        line-height: 36px;
+        font-weight: 700;
+    }
+    input:hover{
+        border: groove orange 3px;
+    }
+    /* Model page below */
+    .modelPage{
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+    label{
+        font-family: sans-serif;
+        font-size: 20px;
+        line-height: 24px;
+    }
+    #currentWeather{
+        display: flex;
+        justify-content: center;
+    }
+    table, th, td{
+        border: solid black 1px;
+    }
+    table{
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    th{
+        font-family: sans-serif;
+        font-size: 16px;
+        height: 60px;
+        padding: 3px;
+        text-align: left;
+        background-color: rgb(146, 155, 196);
+        
+    }
+    td{
+        font-family: serif;
+        font-size: 16px;
+        height: 30px;
+        padding: 3px;
+        text-align: left;
+        background-color: #f5f5f5;
+    }
+    span{
+        color: red;
+    }
+    .averageRent{
+        font-family: sans-serif;
+        font-size: 20px;
+        line-height: 24px;
+        color: black;
+        text-align: center;
+        margin-top: 100px;
+        margin-bottom: 40px;
+    }
+    .bigMoney{
+        font-size: larger;
+        color: black;
+    }
+    .modelPage h1{
+        font-family: sans-serif;
+        font-size: 36px;
+        line-height: 44px;
+        display: flex;
+        color:rgb(90, 111, 205);
+    }
+    .headerdivider {
+        border-top: 1px groove rgb(231, 221, 72);
+        border-bottom: 1px groove rgb(231, 221, 72);
+        width: 90%;
+        height: 1px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .cityOfChoice{
+        font-family: sans-serif;
+        font-size: 20px;
+        line-height: 24px;
+        color:black;
+    }
+}
+
+@media screen and (min-width:1024px){
+    
+    .hidden {
+        display: none;
+    } 
+    /* .signUpPage{
+        display: none;
+    }
+    .questionairePage{
+        display: none;
+    }
+    .modelPage{
+        display: none;
+    } */
+    html{
+        background-color: rgb(240, 233, 135);
+    }
+    h1 {
+        font-family: sans-serif;
+        font-size: 36px;
+        line-height: 44px;
+        display: flex;
+        color:rgb(90, 111, 205);
+        justify-content: center;
+        margin-top: 55px;
+
+    }
+    .cityImages > img{
+        display: flexbox;
+        width: 260px;
+        height: 200px;
+        margin: 5px;
+        margin-bottom: 50px;
+        margin-top: 50px;
+    }
+    p {
+        font-family: sans-serif;
+        font-size: 30px;
+        line-height: 38px;
+        display: flexbox;
+        color:rgb(90, 111, 205);
+        margin: 20px;
+    }
+    .signUpPage {
+        display: flexbox;
+        flex-wrap: wrap;
+        text-align: center;
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+    .signUpForm > input{
+        display: flexbox;
+        flex-wrap: wrap;
+        border: solid grey 1px;
+        margin: 3px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        font-family: serif;
+        height: 35px;
+        width: 210px;
+    
+    }
+    .signUpSubmit > input{
+        display: flexbox;
+        flex-wrap: wrap;
+        background: rgb(90, 111, 205);
+        border: solid grey 1px;
+        margin: 3px;
+        margin-bottom: 50px;
+        font-size: 16px;
+        font-family: serif;
+        color: yellow;
+        height: 35px;
+        width: 110px;
+    }
+    
+    /* Questionairepage below */
+    
+    .questionairePage {
+        display: flexbox;
+        flex-wrap: wrap;
+        text-align: center;
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+    .questionaireForm > input{
+        display: flexbox;
+        flex-wrap: wrap;
+        border: solid grey 1px;
+        margin: 3px;
+        margin-top: 50px;
+        margin-bottom: 30px;
+        font-size: 16px;
+        font-family: serif;
+        height: 35px;
+        width: 210px;
+    
+    }
+    .questionaireSubmit > input{
+        display: flexbox;
+        flex-wrap: wrap;
+        background: rgb(90, 111, 205);
+        border: solid grey 1px;
+        margin: 3px;
+        margin-bottom: 50px;
+        font-size: 16px;
+        font-family: serif;
+        color: yellow;
+        height: 35px;
+        width: 110px;
+    }
+    .questionairePage > p{
+        font-size: 28px;
+        line-height: 36px;
+        font-weight: 700;
+    }
+    input:hover{
+        border: groove orange 3px;
+    }
+    /* Model page below */
+    .modelPage{
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+    label{
+        font-family: sans-serif;
+        font-size: 20px;
+        line-height: 24px;
+    }
+    #currentWeather{
+        display: flex;
+        justify-content: center;
+    }
+    table, th, td{
+        border: solid black 1px;
+    }
+    table{
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    th{
+        font-family: sans-serif;
+        font-size: 16px;
+        height: 60px;
+        padding: 3px;
+        text-align: left;
+        background-color: rgb(146, 155, 196);
+        
+    }
+    td{
+        font-family: serif;
+        font-size: 16px;
+        height: 30px;
+        padding: 3px;
+        text-align: left;
+        background-color: #f5f5f5;
+    }
+    span{
+        color: red;
+    }
+    .averageRent{
+        font-family: sans-serif;
+        font-size: 20px;
+        line-height: 24px;
+        color: black;
+        text-align: center;
+        margin-top: 100px;
+        margin-bottom: 40px;
+    }
+    .bigMoney{
+        font-size: larger;
+        color: black;
+    }
+    .modelPage h1{
+        font-family: sans-serif;
+        font-size: 36px;
+        line-height: 44px;
+        display: flex;
+        color:rgb(90, 111, 205);
+    }
+    .headerdivider {
+        border-top: 1px groove rgb(231, 221, 72);
+        border-bottom: 1px groove rgb(231, 221, 72);
+        width: 90%;
+        height: 1px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .cityOfChoice{
+        font-family: sans-serif;
+        font-size: 20px;
+        line-height: 24px;
+        color:black;
+    }
+}

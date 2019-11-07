@@ -10,20 +10,31 @@
 </head>
 <body>
     <div class="signUpPage">
+        <!-- Considering combining sign-up and questionair pages. -->
 
-        <h1>Let's start with your name</h1>
+        <h1>Ready for life in the big city?</h1>
 
-        <p>
-            Start planning your life in the big city!
-        </p>
+        <div class="cityImages">
+
+            <img alt="Manhattan at night" src="https://cdn.getyourguide.com/img/tour_img-1096032-146.jpg">
+
+            <img alt="Chicago Bean" src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/chicago-bean-night-and-day-raf-winterpacht.jpg">
+
+            <img alt="downtown from Griffith Park" src="http://cdn9.dissolve.com/p/D697_36_017/D697_36_017_0004_600.jpg">
+
+        </div>
+
+        <p>What's your name?</p>
 
         <form class="signUpForm">
 
             <input id="nameInput" type="text" placeholder="Name" autocomplete="on" value="">
+        
+        </form>
 
-            <!-- <input id="cityInput" type="city" placeholder="Ex: Los Angeles"> -->
-            
-            <input id="signUpSubmit" type="submit" value="Get Started!">
+        <form class="signUpSubmit">
+
+            <input id="signUpSubmitter" type="submit" value="Get Started!">
 
         </form>
 
@@ -35,18 +46,17 @@
 
         </div>
 
+        <!-- <p>Which city are you interested in moving to?</p> -->
+
         <form class="questionaireForm">
-             What city are you interested in moving to?
-        <!--    <input class="cityInput" type="text" placeholder="Ex: Los Angeles" autocomplete="on"> -->
-            <input id="cityInput" type="text" placeholder="Ex: Los Angeles">
 
-            <!-- If you are planning on having a roomate, how many bedrooms will your home need?
-            <input id="numberOfBedrooms" type="number" placeholder="Studio = 0">
+             <input title="Keep in mind, we only keep data for the 22 most populated American Cities. from NYC to Boston!" id="cityInput" type="text" placeholder="Ex: New York City">
 
-            What job title are you planning to hold in this new city?
-            <input id="jobTitle" type="text" placeholder="Ex: Registered Nurse" autocomplete="on"> -->
+        </form>
 
-            <input id="questionaireSubmit" type="submit" value="Let's Go!">
+        <form class="questionaireSubmit">
+
+            <input id="questionaireSubmitter" type="submit" value="Let's Go!">
 
         </form>
 
@@ -58,111 +68,37 @@
 
         <div class="averageRent">
 
-            <!-- <label class="jsRentPerRoom">
-                This is how much each room will cost in a ${chosen-number} bedroom apartment in ${chosen-city}
-            </label>
-            
-            <table class="tableOfApartments">
-                <tr>
-                    <th>
-                        Studio Apartment
-                    </th>
-                        
-                    <th>
-                        1 Bedroom Apartment
-                    </th>
-
-                    <th>
-                        2 Bedroom Apartment    
-                    </th>
-
-                    <th>
-                        3 Bedroom Apartment
-                    </th>
-                </tr>
-
-                <tr>
-                    <td>
-                        ${$x,xxx}
-                    </td>
-                        
-                    <td>
-                        ${$x,xxx}
-                    </td>
-
-                    <td>
-                        ${$x,xxx}
-                    </td>
-    
-                    <td>
-                        ${$x,xxx}
-                    </td>
-
-                </tr>
-
-            </table> -->
+            The average monthly rental cost in Los Angeles is <span class="bigMoney">$1000</span>
 
         </div>
+
+        <div class="headerdivider"></div>
 
         <div class="blsStats">
 
             <label class="blsStatsLabel">
-                According to the Bureau of Labor Statistics:
+                Here we have a chart with data from the the Bureau of Labor Statistics which specifies the average annual salary, number of jobs, and the percentage of those jobs that are filled (a lower percentage means more jobs are available!) for three promising career paths. This data is specific to <span class="cityOfChoice">your city of choice</span>.
             </label>
 
             <table class="tablesOfJobs">
 
                 <tr>
+
                     <th id="meanIncomeKey1">
-                        The mean annual income for a Registered Nurse in is:
+                        Registered Nurse:
                     </th>
 
                     <th id="numberOfJobsKey1">
-                        Their number of available jobs is:
+                        Number of jobs:
                     </th>
 
                     <th id="employmentKey1">
-                        And the percentage of these positions that are filled is:
+                        Jobs already taken:
                     </th>
-
-
-
-                    <th id="meanIncomeKey2">
-                        The mean annual income for a Software Developer in is:
-                    </th>
-
-                    <th id="numberOfJobsKey2">
-                        Their number of available jobs is:
-                    </th>
-
-                    <th id="employmentKey2">
-                        And the percentage of these positions that are filled is:
-                    </th>
-
-
-                        
-                    <th id="meanIncomeKey3">
-                        The mean annual income for a Financial Analyst in is:
-                    </th>
-
-                    <th id="numberOfJobsKey3">
-                        Their number of available jobs is:
-                    </th>
-
-                    <th id="employmentKey3">
-                        And the percentage of these positions that are filled is:
-                    </th>
-
+                
                 </tr>
-    
-
-
-
-
-
-
                 <tr>
-                                                
+
                     <td id="meanIncomeValue1">
                         $100,000
                     </td>
@@ -175,8 +111,25 @@
                         100%
                     </td>
 
+                </tr>
 
-                                                
+                <tr>
+
+                    <th id="meanIncomeKey2">
+                        Software Developer:
+                    </th>
+
+                    <th id="numberOfJobsKey2">
+                        Number of jobs:
+                    </th>
+
+                    <th id="employmentKey2">
+                        Jobs already taken:
+                    </th>
+
+                </tr>
+                <tr>
+
                     <td id="meanIncomeValue2">
                         $100,000
                     </td>
@@ -189,8 +142,25 @@
                         100%
                     </td>
 
+                </tr>
 
-                            
+                <tr>
+                        
+                    <th id="meanIncomeKey3">
+                        Financial Analyst:
+                    </th>
+
+                    <th id="numberOfJobsKey3">
+                        Number of jobs:
+                    </th>
+
+                    <th id="employmentKey3">
+                        Jobs already taken:
+                    </th>
+
+                </tr>
+                <tr>
+
                     <td id="meanIncomeValue3">
                         $100,000
                     </td>
@@ -202,7 +172,7 @@
                     <td id="employmentValue3">
                         100%
                     </td>
-    
+
                 </tr>
     
             </table>
@@ -210,10 +180,18 @@
 
         </div>
 
+        <div class="headerdivider"></div>
+
         <div class="weatherDetails">
 
             <label id="currentWeather">
-                The current weather in Los Angeles is 100
+                The current weather in Los Angeles is <span>100°F</span>.
+            </label>
+            <br>
+            <div class="headerdivider"></div>
+            <br>
+            <label id="weatherMessage">
+                Below are the hottest and coldest tempuratures for the months of July and January in Los Angeles, so you can know what to expect!
             </label>
 
             <label class="weatherAverages">
@@ -222,38 +200,38 @@
 
                     <tr>
                         <th id="askSummerHigh">
-                            The average high tempurature for Los Angeles in July is:
+                            Summer High:
                         </th>
                                     
                         <th id="askSummerLow">
-                            The average Low tempurature is:
+                            Summer Low:
                         </th>
         
                         <th id="askWinterHigh">
-                            The average high tempurature for Los Angeles in January is:
+                            Winter High:
                         </th>
 
                         <th id="askWinterLow">
-                            The average low tempurature is:
+                            Winter Low:
                         </th>
         
                     </tr>
                 
                     <tr>
                         <td id="summerHigh">
-                            100
+                            100°F
                         </td>
                                 
                         <td id="summerLow">
-                            100
+                            100°F
                         </td>
         
                         <td id="winterHigh">
-                            100
+                            100°F
                         </td>
 
                         <td id="winterLow">
-                            100
+                            100°F
                         </td>
             
                     </tr>

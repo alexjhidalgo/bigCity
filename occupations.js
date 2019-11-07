@@ -1,136 +1,136 @@
-const STORE = {
-    states: [{
-        abbreviation: 'NY',
-        cities: [{
-            name: 'New York City',
-            regionCode: '0035620'
-        }]
-    },
-    {
-        abbreviation: 'CA',
-        cities: [{
-            name: 'Los Angeles',
-            regionCode: '0031080'
-        },
-        {
-            name: 'San Diego',
-            regionCode: '0041740'
-        },
-        {
-            name: 'San Jose',
-            regionCode: '0041940'
-        },
-        {
-            name: 'San Francisco',
-            regionCode: '0041860'
-        }]
-    },
-    {
-        abbreviation: 'IL',
-        cities: [{
-            name: 'Chicago',
-            regionCode: '0016980'
-        }]
-    },
-    {
-        abbreviation: 'TX',
-        cities: [{
-            name: 'Houston',
-            regionCode: '0026420'
-        },
-        {
-            name: 'San Antonio',
-            regionCode: '0041700'
-        },
-        {
-            name: 'Dallas',
-            regionCode: '0019100'
-        },
-        {
-            name: 'Austin',
-            regionCode: '0012420'
-        },
-        {
-            name: 'Fort Worth',
-            regionCode: '0019100'
-        },
-        {
-            name: 'El Paso',
-            regionCode: '0021340'
-        }]
-    },
-    {
-        abbreviation: 'AZ',
-        cities: [{
-            name: 'Phoenix',
-            regionCode: '0038060'
-        }]
-    },
-    {
-        abbreviation: 'PA',
-        cities: [{
-            name: 'Philadelphia',
-            regionCode: '0037980'
-        }]
-    },
-    {
-        abbreviation: 'FL',
-        cities: [{
-            name: 'Jacksonville',
-            regionCode: '0027260'
-        }]
-    },
-    {
-        abbreviation: 'OH',
-        cities: [{
-            name: 'Columbus',
-            regionCode: '0018140'
-        }]
-    },
-    {
-        abbreviation: 'NC',
-        cities: [{
-            name: 'Charlotte',
-            regionCode: '0016740'
-        }]
-    },
-    {
-        abbreviation: 'IN',
-        cities: [{
-            name: 'Indianapolis',
-            regionCode: '0026900'
-        }]
-    },
-    {
-        abbreviation: 'WA',
-        cities: [{
-            name: 'Seattle',
-            regionCode: '0042660'
-        }]
-    },
-    {
-        abbreviation: 'CO',
-        cities: [{
-            name: 'Denver',
-            regionCode: '0019740'
-        }]
-    },
-    {
-        abbreviation: 'DC',
-        cities: [{
-            name: 'Washington',
-            regionCode: '0047900'
-        }]
-    },
-    {
-        abbreviation: 'MA',
-        cities: [{
-            name: 'Boston',
-            regionCode: '0071650'
-        }]
-    },
-    ]
-}
+// const STORE = {
+//     states: [{
+//         abbreviation: 'NY',
+//         cities: [{
+//             name: 'New York City',
+//             regionCode: '0035620'
+//         }]
+//     },
+//     {
+//         abbreviation: 'CA',
+//         cities: [{
+//             name: 'Los Angeles',
+//             regionCode: '0031080'
+//         },
+//         {
+//             name: 'San Diego',
+//             regionCode: '0041740'
+//         },
+//         {
+//             name: 'San Jose',
+//             regionCode: '0041940'
+//         },
+//         {
+//             name: 'San Francisco',
+//             regionCode: '0041860'
+//         }]
+//     },
+//     {
+//         abbreviation: 'IL',
+//         cities: [{
+//             name: 'Chicago',
+//             regionCode: '0016980'
+//         }]
+//     },
+//     {
+//         abbreviation: 'TX',
+//         cities: [{
+//             name: 'Houston',
+//             regionCode: '0026420'
+//         },
+//         {
+//             name: 'San Antonio',
+//             regionCode: '0041700'
+//         },
+//         {
+//             name: 'Dallas',
+//             regionCode: '0019100'
+//         },
+//         {
+//             name: 'Austin',
+//             regionCode: '0012420'
+//         },
+//         {
+//             name: 'Fort Worth',
+//             regionCode: '0019100'
+//         },
+//         {
+//             name: 'El Paso',
+//             regionCode: '0021340'
+//         }]
+//     },
+//     {
+//         abbreviation: 'AZ',
+//         cities: [{
+//             name: 'Phoenix',
+//             regionCode: '0038060'
+//         }]
+//     },
+//     {
+//         abbreviation: 'PA',
+//         cities: [{
+//             name: 'Philadelphia',
+//             regionCode: '0037980'
+//         }]
+//     },
+//     {
+//         abbreviation: 'FL',
+//         cities: [{
+//             name: 'Jacksonville',
+//             regionCode: '0027260'
+//         }]
+//     },
+//     {
+//         abbreviation: 'OH',
+//         cities: [{
+//             name: 'Columbus',
+//             regionCode: '0018140'
+//         }]
+//     },
+//     {
+//         abbreviation: 'NC',
+//         cities: [{
+//             name: 'Charlotte',
+//             regionCode: '0016740'
+//         }]
+//     },
+//     {
+//         abbreviation: 'IN',
+//         cities: [{
+//             name: 'Indianapolis',
+//             regionCode: '0026900'
+//         }]
+//     },
+//     {
+//         abbreviation: 'WA',
+//         cities: [{
+//             name: 'Seattle',
+//             regionCode: '0042660'
+//         }]
+//     },
+//     {
+//         abbreviation: 'CO',
+//         cities: [{
+//             name: 'Denver',
+//             regionCode: '0019740'
+//         }]
+//     },
+//     {
+//         abbreviation: 'DC',
+//         cities: [{
+//             name: 'Washington',
+//             regionCode: '0047900'
+//         }]
+//     },
+//     {
+//         abbreviation: 'MA',
+//         cities: [{
+//             name: 'Boston',
+//             regionCode: '0071650'
+//         }]
+//     },
+//     ]
+// }
 
 
 

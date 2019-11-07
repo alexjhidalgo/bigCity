@@ -1,6 +1,6 @@
 'use strict'
 function submitSignUpForm(){
-    $('.signUpForm').on('submit', function(){
+    $('.signUpSubmit').on('submit', function(){
         event.preventDefault();
         let userName = document.getElementById('nameInput').value;
         addSignUpData(userName);
@@ -10,7 +10,7 @@ function submitSignUpForm(){
 function addSignUpData(userName){
     $('#nameAndCityBanner').empty();
     $('#nameAndCityBanner').append(`
-    <h1> Okay ${userName}, just a few more questions. </h1>
+    <h1> Okay ${userName}, which city are you interested in moving to? </h1>
     `)
     moveToQuestionaire();
     console.log('function addSignUpData(userName) ran')
@@ -21,11 +21,11 @@ function moveToQuestionaire(){
     console.log('function moveToQuestionaire() ran')
 }
 function validateQuestionaireForm(){
-    $('.questionaireForm').on('submit', function(){
+    $('.questionaireSubmit').on('submit', function(){
         event.preventDefault();
         let cityInput = document.getElementById('cityInput').value;
-        getLatAndLong(cityInput)
-        moveToModelPage();
+        getLatAndLong(cityInput);
+        
         console.log('function validateQuestionaireForm() ran');
     });
 }
@@ -33,7 +33,7 @@ function getLatAndLong(cityInput){
     let cityForURL = encodeURIComponent(cityInput.trim());
     let geoCodeBaseURL = 'https://geocode.xyz/';
     let geoCodeEndPoint = '?json=1';
-    let geoCodeURL = geoCodeBaseURL + cityForURL + geoCodeEndPoint;
+    let geoCodeURL = geoCodeBaseURL + cityForURL + ',%20US' + geoCodeEndPoint;
     fetch(geoCodeURL)
     .then(response => response.json() )
     .then(responseJson => {
@@ -53,22 +53,29 @@ function getCityWeatherData(latt, longt, cityInput, ){
     .then(responseJson => {
         let stateCodeInput = responseJson.data[0].state_code;
         fillWeatherDetails(responseJson, cityInput);
-        // findRegionCode(cityInput, stateCodeInput);// may delete
         findJSState(stateCodeInput, cityInput);
     });
     console.log('function getCityWeatherData(cityInput) ran');
 }
 function fillWeatherDetails(responseJson, cityInput){
-    let displayTemp = ((responseJson.data[0].temp)*(9/5))+32;
+    let displayTemp = ((responseJson.data[0].temp)*(9/5))+32; //Find a way to make sure only 2 digits may follow decimal
     $('#currentWeather').empty();
     $('#currentWeather').append(`
-    The current temperature in ${cityInput} is ${displayTemp}
+    The current temperature in ${cityInput} is <span>${displayTemp}°F</span>.
     `)
+    $('#weatherMessage').empty();
+    $('#weatherMessage').append(`
+    Below are the hottest and coldest tempuratures for the months of July and January in ${cityInput}, so you can know what to expect!
+    `)
+
+    $('.cityOfChoice').empty();
+    $('.cityOfChoice').append(`${cityInput}`);
+    
+    moveToModelPage();
+
     console.log('function fillWeatherDetails() ran');
 }
 function objectsInModel(currentObject){
-    $('#askSummerHigh').empty();
-    $('#askWinterHigh').empty();
     $('#summerHigh').empty();
     $('#summerLow').empty();
     $('#winterHigh').empty();
@@ -76,32 +83,27 @@ function objectsInModel(currentObject){
 
     $('.averageRent').empty();
 
-    $('#askSummerHigh').append(`
-    The average high tempurature for ${currentObject.name} in July is:
-    `);
-    $('#askWinterHigh').append(`
-    The average high tempurature for ${currentObject.name} in January is:
-    `);
     $('#summerHigh').append(`
-    ${currentObject.julHigh}
+    ${currentObject.julHigh}°F
     `);
     $('#summerLow').append(`
-    ${currentObject.julLow}
+    ${currentObject.julLow}°F
     `);
     $('#winterHigh').append(`
-    ${currentObject.janHigh}
+    ${currentObject.janHigh}°F
     `);
     $('#winterLow').append(`
-    ${currentObject.janLow}
+    ${currentObject.janLow}°F
     `);
 
     $('.averageRent').append(`
-    The average monthly rental cost in ${currentObject.name} is ${currentObject.rent}
+    The average monthly rental cost in ${currentObject.name} is <span class="bigMoney">${currentObject.rent}</span>
     `);
 
     console.log('function objectsInModel() ran')
 }
 function findJSState(stateCodeInput, cityInput){
+    console.log(stateCodeInput + cityInput);
     for(let i = 0; i < STORE.states.length; i++){
         let stateCodeJS = STORE.states[i].abbreviation;
         if(stateCodeJS === stateCodeInput){
