@@ -1,4 +1,5 @@
 'use strict'
+
 function submitSignUpForm(){
     $('.signUpSubmit').on('submit', function(){
         event.preventDefault();
