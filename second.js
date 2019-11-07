@@ -25,9 +25,21 @@ function validateQuestionaireForm(){
     $('.questionaireSubmit').on('submit', function(){
         event.preventDefault();
         let cityInput = document.getElementById('cityInput').value;
-        getLatAndLong(cityInput);
-        
-        console.log('function validateQuestionaireForm() ran');
+        for(let i = 0; i < under22.length; i++){
+            let checkCityInput = cityInput.toLowerCase().replace(/\s+/g, '');
+            let match22 = under22[i].toLowerCase().replace(/\s+/g, '');
+            if (checkCityInput === match22){
+                let goOn = true;
+                if (goOn === true){
+                    getLatAndLong(cityInput);
+                    console.log('function validateQuestionaireForm() ran');
+                    break;
+                }
+            }
+            else if (match22 === 'baddonkey'){
+                alert('Something went wrong! Make sure the city is in the United States and one of the 22 most populous cities. Sometimes the server gets too many requests at once, so just keep trying.');
+            }
+        }
     });
 }
 function getLatAndLong(cityInput){
@@ -40,13 +52,13 @@ function getLatAndLong(cityInput){
     .then(responseJson => {
         let latt = responseJson.latt;
         let longt = responseJson.longt;
-        getCityWeatherData(latt, longt, cityInput, cityForURL);
+        getCityWeatherData(latt, longt, cityInput);
         console.log(responseJson);
      })
      .catch(error => alert('Something went wrong! Make sure the city is spelled correctly, or try typing city name a different way. Sometimes the server gets too many requests right now, so just keep trying.'));
     console.log('function getLatAndLong() ran');
 }
-function getCityWeatherData(latt, longt, cityInput, ){
+function getCityWeatherData(latt, longt, cityInput){
     let baseURLWeather = 'https://api.weatherbit.io/v2.0/current';
     let weatherAPIKey = '43212f971ccf447091711593c0157ad4';
     let forecastRequest = baseURLWeather + '?&lat=' + latt + '&lon=' + longt + '&key=' + weatherAPIKey;
@@ -55,8 +67,7 @@ function getCityWeatherData(latt, longt, cityInput, ){
     .then(responseJson => {
         let stateCodeInput = responseJson.data[0].state_code;
         fillWeatherDetails(responseJson, cityInput);
-        findJSState(stateCodeInput, cityInput);
-    })
+        findJSState(stateCodeInput, cityInput)})
     .catch(error => alert('Something went wrong! Make sure the city is in the United States and one of the 22 most populous cities. Sometimes the server gets too many requests right now, so just keep trying.'));
     console.log('function getCityWeatherData(cityInput) ran');
 }
@@ -524,3 +535,29 @@ const STORE = {
     },
     ]
 }
+
+const under22 = [
+     'New York City',
+     'Los Angeles',
+     'San Diego',
+     'San Jose',
+     'San Francisco',
+     'Chicago',
+     'Houston',
+     'San Antonio',
+     'Dallas',
+     'Austin',
+     'Fort Worth',
+     'El Paso',
+     'Phoenix',
+     'Philadelphia',
+     'Jacksonville',
+     'Columbus',
+     'Charlotte',
+     'Indianapolis',
+     'Seattle',
+     'Denver', 
+     'Washington DC',
+     'Boston',
+     'Bad Donkey'
+]
