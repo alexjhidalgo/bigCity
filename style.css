@@ -5,15 +5,6 @@
 .hidden {
     display: none;
 } 
-/* .signUpPage{
-    display: none;
-}
-.questionairePage{
-    display: none;
-}
-.modelPage{
-    display: none;
-} */
 html{
     background-color: rgb(240, 233, 135);
 }
@@ -195,15 +186,6 @@ span{
     .hidden {
         display: none;
     } 
-    /* .signUpPage{
-        display: none;
-    }
-    .questionairePage{
-        display: none;
-    }
-    .modelPage{
-        display: none;
-    } */
     html{
         background-color: rgb(240, 233, 135);
     }
@@ -385,16 +367,7 @@ span{
     
     .hidden {
         display: none;
-    } 
-    /* .signUpPage{
-        display: none;
     }
-    .questionairePage{
-        display: none;
-    }
-    .modelPage{
-        display: none;
-    } */
     html{
         background-color: rgb(240, 233, 135);
     }
@@ -584,16 +557,7 @@ span{
     
     .hidden {
         display: none;
-    } 
-    /* .signUpPage{
-        display: none;
     }
-    .questionairePage{
-        display: none;
-    }
-    .modelPage{
-        display: none;
-    } */
     html{
         background-color: rgb(240, 233, 135);
     }
@@ -784,16 +748,7 @@ span{
     
     .hidden {
         display: none;
-    } 
-    /* .signUpPage{
-        display: none;
     }
-    .questionairePage{
-        display: none;
-    }
-    .modelPage{
-        display: none;
-    } */
     html{
         background-color: rgb(240, 233, 135);
     }
