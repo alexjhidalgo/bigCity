@@ -270,7 +270,11 @@ function moveToModelPage(){
     $('.questionairePage').addClass('hidden');
     console.log('function moveToModelPage() ran')
 }
-
+$(document).ready(function(){
+    $("button").click(function(){
+        location.reload(true);
+    });
+});
 
 
 
