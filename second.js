@@ -136,6 +136,7 @@ function findJSRegionCode(jsCities, cityInput){
             let currentObject = jsCities[i];
             objectsInModel(currentObject);
             getBLSData(areaCode);
+            console.log(areaCode + 'hereherehere')
             console.log('function findJSCity() ran')
         };
     };
@@ -143,7 +144,7 @@ function findJSRegionCode(jsCities, cityInput){
 function getBLSData(areaCode){
     let baseURL = 'https://api.bls.gov/publicAPI/v2/timeseries/data/';
     let oeStats = 'OEUM';
-    let blsAPIKey = 'registrationkey=9a3d2a4bbc27437eb9e632670aefb4cf';
+    let blsAPIKey = 'registrationkey=62b665d3872e452eba1ad1a1fce856e3'; //alternate registration key for maximum limit: 9a3d2a4bbc27437eb9e632670aefb4cf
 
     let rnMedianSalary = baseURL + oeStats + areaCode + '000000' + '291141' + '04' + '?' + blsAPIKey;
     let rnsWorkingPer1000Jobs = baseURL + oeStats + areaCode + '000000' + '291141' + '16' + '?' + blsAPIKey;
@@ -162,6 +163,7 @@ function getBLSData(areaCode){
         .then(responseJson => {
             let rnSalary = responseJson.Results.series[0].data[0].value;
             addRNSalaryToModel(rnSalary);
+            console.log(rnSalary+ 'hereherehere')
         })
         .catch(error => alert('Something went wrong!'));
     fetch(sweMedianSalary)
