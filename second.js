@@ -73,9 +73,10 @@ function getCityWeatherData(latt, longt, cityInput){
 }
 function fillWeatherDetails(responseJson, cityInput){
     let displayTemp = ((responseJson.data[0].temp)*(9/5))+32; //Find a way to make sure only 2 digits may follow decimal
+    let temp = displayTemp.toFixed(2);
     $('#currentWeather').empty();
     $('#currentWeather').append(`
-    The current temperature in ${cityInput} is <span>${displayTemp}°F</span>.
+The current temperature in ${cityInput} is&nbsp;<span>${temp}°F</span>.
     `)
     $('#weatherMessage').empty();
     $('#weatherMessage').append(`
