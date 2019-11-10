@@ -66,13 +66,14 @@ function getCityWeatherData(latt, longt, cityInput){
     .then(response => response.json() )
     .then(responseJson => {
         let stateCodeInput = responseJson.data[0].state_code;
+        console.log(responseJson);
         fillWeatherDetails(responseJson, cityInput);
         findJSState(stateCodeInput, cityInput)})
     .catch(error => alert('Something went wrong! Make sure the city is in the United States and one of the 22 most populous cities. Sometimes the server gets too many requests right now, so just keep trying.'));
     console.log('function getCityWeatherData(cityInput) ran');
 }
 function fillWeatherDetails(responseJson, cityInput){
-    let displayTemp = ((responseJson.data[0].temp)*(9/5))+32; //Find a way to make sure only 2 digits may follow decimal
+    let displayTemp = ((responseJson.data[0].temp)*(9/5))+32;
     let temp = displayTemp.toFixed(2);
     $('#currentWeather').empty();
     $('#currentWeather').append(`
@@ -300,7 +301,7 @@ $(function runIt() {
 const STORE = {
     states: [
     {
-        abbreviation: 'NY',
+        abbreviation: 'NJ',
         cities: [{
             name: 'New York City',
             regionCode: '0035620',
