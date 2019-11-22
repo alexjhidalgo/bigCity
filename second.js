@@ -1,30 +1,12 @@
 'use strict'
 
-function submitSignUpForm(){
-    $('.signUpSubmit').on('submit', function(){
-        event.preventDefault();
-        let userName = document.getElementById('nameInput').value;
-        addSignUpData(userName);
-        console.log('function submitSignUpForm() ran')
-    });
-}
-function addSignUpData(userName){
-    $('#nameAndCityBanner').empty();
-    $('#nameAndCityBanner').append(`
-    <h1> Okay ${userName}, which city are you interested in moving to? </h1>
-    `)
-    moveToQuestionaire();
-    console.log('function addSignUpData(userName) ran')
-}
-function moveToQuestionaire(){
-    $('.signUpPage').addClass('hidden');
-    $('.questionairePage').removeClass('hidden');
-    console.log('function moveToQuestionaire() ran')
-}
+// Makes sure city input is a valid city
 function validateQuestionaireForm(){
     $('.questionaireSubmit').on('submit', function(){
         event.preventDefault();
+        
         let cityInput = document.getElementById('cityInput').value;
+
         for(let i = 0; i < under22.length; i++){
             let checkCityInput = cityInput.toLowerCase().replace(/\s+/g, '');
             let match22 = under22[i].toLowerCase().replace(/\s+/g, '');
@@ -32,7 +14,6 @@ function validateQuestionaireForm(){
                 let goOn = true;
                 if (goOn === true){
                     getLatAndLong(cityInput);
-                    console.log('function validateQuestionaireForm() ran');
                     break;
                 }
             }
@@ -42,6 +23,8 @@ function validateQuestionaireForm(){
         }
     });
 }
+
+// Gets the coordinates of city input in order for getCityWeatherData() to function
 function getLatAndLong(cityInput){
     let cityForURL = encodeURIComponent(cityInput.trim());
     let geoCodeBaseURL = 'https://geocode.xyz/';
@@ -53,11 +36,11 @@ function getLatAndLong(cityInput){
         let latt = responseJson.latt;
         let longt = responseJson.longt;
         getCityWeatherData(latt, longt, cityInput);
-        console.log(responseJson);
      })
      .catch(error => alert('Something went wrong! Make sure the city is spelled correctly, or try typing city name a different way. Sometimes the server gets too many requests right now, so just keep trying.'));
-    console.log('function getLatAndLong() ran');
 }
+
+// Gets current tempurature of city and state code for findJSState() functionality
 function getCityWeatherData(latt, longt, cityInput){
     let baseURLWeather = 'https://api.weatherbit.io/v2.0/current';
     let weatherAPIKey = '43212f971ccf447091711593c0157ad4';
@@ -66,12 +49,12 @@ function getCityWeatherData(latt, longt, cityInput){
     .then(response => response.json() )
     .then(responseJson => {
         let stateCodeInput = responseJson.data[0].state_code;
-        console.log(responseJson);
         fillWeatherDetails(responseJson, cityInput);
         findJSState(stateCodeInput, cityInput)})
     .catch(error => alert('Something went wrong! Make sure the city is in the United States and one of the 22 most populous cities. Sometimes the server gets too many requests right now, so just keep trying.'));
-    console.log('function getCityWeatherData(cityInput) ran');
 }
+
+// Adjusts current tempurature into Fahrenheit and displays it in the model page
 function fillWeatherDetails(responseJson, cityInput){
     let displayTemp = ((responseJson.data[0].temp)*(9/5))+32;
     let temp = displayTemp.toFixed(2);
@@ -87,10 +70,9 @@ The current temperature in ${cityInput} is&nbsp;<span>${temp}°F</span>.
     $('.cityOfChoice').empty();
     $('.cityOfChoice').append(`${cityInput}`);
     
-    moveToModelPage();
-
-    console.log('function fillWeatherDetails() ran');
 }
+
+// Adds average tempuratures from STORE into the table slots on the model page
 function objectsInModel(currentObject){
     $('#summerHigh').empty();
     $('#summerLow').empty();
@@ -115,20 +97,20 @@ function objectsInModel(currentObject){
     $('.averageRent').append(`
     The average monthly rental cost in ${currentObject.name} is <span class="bigMoney">${currentObject.rent}</span>
     `);
-
-    console.log('function objectsInModel() ran')
 }
+
+// Matches state code from getCityWeatherDetails() with state code in STORE and sends list of cities in it to findJSRegionCode()
 function findJSState(stateCodeInput, cityInput){
-    console.log(stateCodeInput + cityInput);
     for(let i = 0; i < STORE.states.length; i++){
         let stateCodeJS = STORE.states[i].abbreviation;
         if(stateCodeJS === stateCodeInput){
             let jsCities = STORE.states[i].cities;
-            console.log('function findJSState() ran');
             findJSRegionCode(jsCities, cityInput);
         };
     };
 }
+
+// Matches cityInput to list of cities to get the bls area code
 function findJSRegionCode(jsCities, cityInput){
     let minimizedCityNameInput = cityInput.toLowerCase().replace(/\s+/g, '');
     for(let i = 0; i < jsCities.length; i++){
@@ -138,34 +120,33 @@ function findJSRegionCode(jsCities, cityInput){
             let currentObject = jsCities[i];
             objectsInModel(currentObject);
             getBLSData(areaCode);
-            console.log(areaCode + 'hereherehere')
-            console.log('function findJSCity() ran')
         };
     };
 }
+
+// Adds areaCode to all bls get requests and fetches job statistics for that region
 function getBLSData(areaCode){
     let baseURL = 'https://api.bls.gov/publicAPI/v2/timeseries/data/';
-    let oeStats = 'OEUM';
-    let blsAPIKey = 'registrationkey=62b665d3872e452eba1ad1a1fce856e3'; //alternate registration key for maximum limit: 9a3d2a4bbc27437eb9e632670aefb4cf
+    let oeStats = 'OEUM' + areaCode + '000000';
+    let blsAPIKey = 'registrationkey=62b665d3872e452eba1ad1a1fce856e3'; //alternate registration key incase maximum limit reached: 9a3d2a4bbc27437eb9e632670aefb4cf
 
-    let rnMedianSalary = baseURL + oeStats + areaCode + '000000' + '291141' + '04' + '?' + blsAPIKey;
-    let rnsWorkingPer1000Jobs = baseURL + oeStats + areaCode + '000000' + '291141' + '16' + '?' + blsAPIKey;
-    let rnJobs = baseURL + oeStats + areaCode + '000000' + '291141' + '01' + '?' + blsAPIKey;
+    let rnMedianSalary = baseURL + oeStats + '291141' + '04' + '?' + blsAPIKey;
+    let rnsWorkingPer1000Jobs = baseURL + oeStats + '291141' + '16' + '?' + blsAPIKey;
+    let rnJobs = baseURL + oeStats +  '291141' + '01' + '?' + blsAPIKey;
 
-    let sweMedianSalary = baseURL + oeStats + areaCode + '000000' + '151132' + '04' + '?' + blsAPIKey;
-    let swesWorkingPer1000Jobs = baseURL + oeStats + areaCode + '000000' + '151132' + '16' + '?' + blsAPIKey;
-    let sweJobs = baseURL + oeStats + areaCode + '000000' + '151132' + '01' + '?' + blsAPIKey;
+    let sweMedianSalary = baseURL + oeStats + '151132' + '04' + '?' + blsAPIKey;
+    let swesWorkingPer1000Jobs = baseURL + oeStats + '151132' + '16' + '?' + blsAPIKey;
+    let sweJobs = baseURL + oeStats + '151132' + '01' + '?' + blsAPIKey;
 
-    let faMedianSalary = baseURL + oeStats + areaCode + '000000' + '132051' + '04' + '?' + blsAPIKey;
-    let fasWorkingPer1000Jobs = baseURL + oeStats + areaCode + '000000' + '132051' + '16' + '?' + blsAPIKey;
-    let faJobs = baseURL + oeStats + areaCode + '000000' + '132051' + '01' + '?' + blsAPIKey;
+    let faMedianSalary = baseURL + oeStats + '132051' + '04' + '?' + blsAPIKey;
+    let fasWorkingPer1000Jobs = baseURL + oeStats + '132051' + '16' + '?' + blsAPIKey;
+    let faJobs = baseURL + oeStats + '132051' + '01' + '?' + blsAPIKey;
 
     fetch(rnMedianSalary)
         .then(response => response.json() )
         .then(responseJson => {
             let rnSalary = responseJson.Results.series[0].data[0].value;
             addRNSalaryToModel(rnSalary);
-            console.log(rnSalary+ 'hereherehere')
         })
         .catch(error => alert('Something went wrong!'));
     fetch(sweMedianSalary)
@@ -224,56 +205,77 @@ function getBLSData(areaCode){
             addFAJobsNumToModel(faJobsNum);
         })
         .catch(error => alert('Something went wrong!'));
-    console.log('function getBLSData() ran');
+    moveToModelPage();
 }
+
+// Fills BLS data on model page
 function addRNSalaryToModel(rnSalary){
     let rnSalary2 = '$' + rnSalary.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
     $('#meanIncomeValue1').empty();
     $('#meanIncomeValue1').append(rnSalary2);
 }
+
+// Fills BLS data on model page
 function addSWESalaryToModel(sweSalary){
     let sweSalary2 = '$' + sweSalary.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
     $('#meanIncomeValue2').empty();
     $('#meanIncomeValue2').append(sweSalary2);
 }
+
+// Fills BLS data on model page
 function addFASalaryToModel(faSalary){
     let faSalary2 = '$' + faSalary.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
     $('#meanIncomeValue3').empty();
     $('#meanIncomeValue3').append(faSalary2);
 }
+
+// Fills BLS data on model page
 function addRNJobsNumToModel(rnJobsNum){
     let rnJobsNum2 = rnJobsNum.replace( /\d{1,3}(?=(\d{3})+(?!\d))/g , "$&,");
     $('#numberOfJobsValue1').empty();
     $('#numberOfJobsValue1').append(rnJobsNum2);
 }
+
+// Fills BLS data on model page
 function addSWEJobsNumToModel(sweJobsNum){
     let sweJobsNum2 = sweJobsNum.replace( /\d{1,3}(?=(\d{3})+(?!\d))/g , "$&,");
     $('#numberOfJobsValue2').empty();
     $('#numberOfJobsValue2').append(sweJobsNum2);
 }
+
+// Fills BLS data on model page
 function addFAJobsNumToModel(faJobsNum){
     let faJobsNum2 = faJobsNum.replace( /\d{1,3}(?=(\d{3})+(?!\d))/g , "$&,");
     $('#numberOfJobsValue3').empty();
     $('#numberOfJobsValue3').append(faJobsNum2);
 }
+
+// Fills BLS data on model page
 function addRNEmploymentToModel(rnsPer1000){
     $('#employmentValue1').empty();
     $('#employmentValue1').append(rnsPer1000 + '%');
 }
+
+// Fills BLS data on model page
 function addSWEEmploymentToModel(swesPer1000){
     $('#employmentValue2').empty();
     $('#employmentValue2').append(swesPer1000 + '%');
 }
+
+// Fills BLS data on model page
 function addFAEmploymentToModel(fasPer1000){
     $('#employmentValue3').empty();
     $('#employmentValue3').append(fasPer1000 + '%');
+    
 }
 
+// Hides landing page and displays model page
 function moveToModelPage(){
     $('.modelPage').removeClass('hidden');
-    $('.questionairePage').addClass('hidden');
-    console.log('function moveToModelPage() ran')
+    $('.signUpPage').addClass('hidden');
 }
+
+// Resets the whole web app
 $(document).ready(function(){
     $("button").click(function(){
         location.reload(true);
@@ -282,11 +284,10 @@ $(document).ready(function(){
 
 
 
-
+//initiates webpage functions
 $(function runIt() {
     $(document).ready();
     console.log('Locked n Loaded');
-    submitSignUpForm();
     validateQuestionaireForm();
 });
 

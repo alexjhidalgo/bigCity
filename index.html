@@ -11,12 +11,11 @@
     <link rel="shortcut icon" type="image/png" href="favicon2.jpg">
 </head>
 <body>
-    <div class="signUpPage">
-        <!-- Considering combining sign-up and questionaire pages. -->
+    <header class="signUpPage">
 
         <h1>Ready for life in the big city?</h1>
 
-        <div class="cityImages">
+        <section class="cityImages">
 
             <img alt="Manhattan at night" src="https://cdn.getyourguide.com/img/tour_img-1096032-146.jpg">
 
@@ -24,58 +23,41 @@
 
             <img alt="downtown from Griffith Park" src="https://journeyinphotos.com/wp-content/uploads/2019/06/2_20180707-Los_Angeles_over_Griffith_Observatory-%C2%A9_DeRosia_Photography_2018-1200x640.jpg">
 
-        </div>
+        </section>
 
-        <p>What's your name?</p>
+        <p>
+            We're here to give you some important statistics you should consider before moving to one of America's biggest cities!
+        </p>
 
-        <form class="signUpForm" onsubmit="return false;">
-
-            <input id="nameInput" type="text" placeholder="Name" autocomplete="on" value="">
-        
-        </form>
-
-        <form class="signUpSubmit">
-
-            <input id="signUpSubmitter" type="submit" value="Get Started!">
-
-        </form>
-
-    </div>
-
-    <div class="questionairePage hidden">
-
-        <div id="nameAndCityBanner">
-
-        </div>
-
+        <p> Type a big city name below</p>
 
         <form class="questionaireForm" onsubmit="return false;">
-
-             <input title="Keep in mind, we only keep data for the 22 most populated American Cities." id="cityInput" type="text" placeholder="Ex: New York City">
+            
+            <input title="Keep in mind, we only keep data for the 22 most populated American Cities." id="cityInput" type="text" placeholder="Ex: New York City">
 
         </form>
 
         <form class="questionaireSubmit">
 
-            <input title="Keep in mind, we only keep data for the 22 most populated American Cities." id="questionaireSubmitter" type="submit" value="Let's Go!">
+           <input title="Keep in mind, we only keep data for the 22 most populated American Cities." id="questionaireSubmitter" type="submit" value="Let's Go!">
 
         </form>
 
-    </div>
+    </header>
 
-    <div class="modelPage hidden">
+    <main class="modelPage hidden">
 
         <h1>Ready for life in the big city?</h1>
 
-        <div class="averageRent">
+        <section class="averageRent">
 
             The average monthly rental cost in Los Angeles is <span class="bigMoney">$1000</span>
 
-        </div>
+        </section>
 
         <div class="headerdivider"></div>
 
-        <div class="blsStats">
+        <section class="blsStats">
 
             <label class="blsStatsLabel">
                 Here we have a chart with data from the the Bureau of Labor Statistics which specifies the average annual salary, number of jobs, and the percentage of those jobs that are filled (a lower percentage means more jobs are available!) for three promising career paths. This data is specific to <span class="cityOfChoice">your city of choice</span>.
@@ -179,11 +161,11 @@
             </table>
     
 
-        </div>
+        </section>
 
         <div class="headerdivider"></div>
 
-        <div class="weatherDetails">
+        <section class="weatherDetails">
 
             <label id="currentWeather">
                 The current weather in Los Angeles is <span>100°F</span>.
@@ -238,15 +220,15 @@
 
                 </table>
 
-            
+            </section>
 
+            <footer>
 
                 <button class='buttton'>Start Over with a New City!</button>
+            
+            </footer>
 
-
-        </div>
-
-    </div>
+    </main>
 
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
     </script>

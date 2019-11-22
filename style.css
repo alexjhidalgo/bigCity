@@ -67,13 +67,6 @@ p {
 
 /* Questionairepage below */
 
-.questionairePage {
-    display: flexbox;
-    flex-wrap: wrap;
-    text-align: center;
-    margin-left: 8%;
-    margin-right: 8%;
-}
 .questionaireForm > input{
     display: flexbox;
     flex-wrap: wrap;
@@ -98,11 +91,6 @@ p {
     color: yellow;
     height: 35px;
     width: 110px;
-}
-.questionairePage > p{
-    font-size: 28px;
-    line-height: 36px;
-    font-weight: 700;
 }
 input:hover{
     border: groove orange 3px;
@@ -263,13 +251,6 @@ button:hover{
     
     /* Questionairepage below */
     
-    .questionairePage {
-        display: flexbox;
-        flex-wrap: wrap;
-        text-align: center;
-        margin-left: 8%;
-        margin-right: 8%;
-    }
     .questionaireForm > input{
         display: flexbox;
         flex-wrap: wrap;
@@ -295,11 +276,7 @@ button:hover{
         height: 35px;
         width: 110px;
     }
-    .questionairePage > p{
-        font-size: 28px;
-        line-height: 36px;
-        font-weight: 700;
-    }
+
     input:hover{
         border: groove orange 3px;
     }
@@ -465,13 +442,6 @@ button:hover{
     
     /* Questionairepage below */
     
-    .questionairePage {
-        display: flexbox;
-        flex-wrap: wrap;
-        text-align: center;
-        margin-left: 8%;
-        margin-right: 8%;
-    }
     .questionaireForm > input{
         display: flexbox;
         flex-wrap: wrap;
@@ -497,11 +467,6 @@ button:hover{
         color: yellow;
         height: 35px;
         width: 110px;
-    }
-    .questionairePage > p{
-        font-size: 28px;
-        line-height: 36px;
-        font-weight: 700;
     }
     input:hover{
         border: groove orange 3px;
@@ -669,14 +634,7 @@ button:hover{
     }
     
     /* Questionairepage below */
-    
-    .questionairePage {
-        display: flexbox;
-        flex-wrap: wrap;
-        text-align: center;
-        margin-left: 8%;
-        margin-right: 8%;
-    }
+
     .questionaireForm > input{
         display: flexbox;
         flex-wrap: wrap;
@@ -702,11 +660,6 @@ button:hover{
         color: yellow;
         height: 35px;
         width: 110px;
-    }
-    .questionairePage > p{
-        font-size: 28px;
-        line-height: 36px;
-        font-weight: 700;
     }
     input:hover{
         border: groove orange 3px;
@@ -839,7 +792,8 @@ button:hover{
         line-height: 38px;
         display: flexbox;
         color:rgb(90, 111, 205);
-        margin: 20px;
+        margin-top: 20px;
+        margin-bottom: 10px;
     }
     .signUpPage {
         display: flexbox;
@@ -876,13 +830,6 @@ button:hover{
     
     /* Questionairepage below */
     
-    .questionairePage {
-        display: flexbox;
-        flex-wrap: wrap;
-        text-align: center;
-        margin-left: 8%;
-        margin-right: 8%;
-    }
     .questionaireForm > input{
         display: flexbox;
         flex-wrap: wrap;
@@ -908,11 +855,6 @@ button:hover{
         color: yellow;
         height: 35px;
         width: 110px;
-    }
-    .questionairePage > p{
-        font-size: 28px;
-        line-height: 36px;
-        font-weight: 700;
     }
     input:hover{
         border: groove orange 3px;
