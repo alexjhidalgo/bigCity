@@ -134,13 +134,13 @@ function getBLSData(areaCode){
     let rnsWorkingPer1000Jobs = baseURL + oeStats + '291141' + '16' + '?' + blsAPIKey;
     let rnJobs = baseURL + oeStats +  '291141' + '01' + '?' + blsAPIKey;
 
-    let sweMedianSalary = baseURL + oeStats + '151132' + '04' + '?' + blsAPIKey;
-    let swesWorkingPer1000Jobs = baseURL + oeStats + '151132' + '16' + '?' + blsAPIKey;
-    let sweJobs = baseURL + oeStats + '151132' + '01' + '?' + blsAPIKey;
+    let sweMedianSalary = baseURL + oeStats + '151256' + '04' + '?' + blsAPIKey;
+    let swesWorkingPer1000Jobs = baseURL + oeStats + '151256' + '16' + '?' + blsAPIKey;
+    let sweJobs = baseURL + oeStats + '151256' + '01' + '?' + blsAPIKey;
 
-    let faMedianSalary = baseURL + oeStats + '132051' + '04' + '?' + blsAPIKey;
-    let fasWorkingPer1000Jobs = baseURL + oeStats + '132051' + '16' + '?' + blsAPIKey;
-    let faJobs = baseURL + oeStats + '132051' + '01' + '?' + blsAPIKey;
+    let faMedianSalary = baseURL + oeStats + '132098' + '04' + '?' + blsAPIKey;
+    let fasWorkingPer1000Jobs = baseURL + oeStats + '132098' + '16' + '?' + blsAPIKey;
+    let faJobs = baseURL + oeStats + '132098' + '01' + '?' + blsAPIKey;
 
     fetch(rnMedianSalary)
         .then(response => response.json() )
