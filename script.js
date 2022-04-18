@@ -6,16 +6,13 @@ function validateQuestionaireForm(){
         event.preventDefault();
         
         let cityInput = document.getElementById('cityInput').value;
+        let checkCityInput = cityInput.toLowerCase().replace(/\s+/g, '');
 
         for(let i = 0; i < under22.length; i++){
-            let checkCityInput = cityInput.toLowerCase().replace(/\s+/g, '');
             let match22 = under22[i].toLowerCase().replace(/\s+/g, '');
             if (checkCityInput === match22){
-                let goOn = true;
-                if (goOn === true){
-                    getLatAndLong(cityInput);
-                    break;
-                }
+                getLatAndLong(cityInput);
+                break;
             }
             else if (match22 === 'baddonkey'){
                 alert('Something went wrong! Make sure the city is in the United States and one of the 22 most populous cities. Sometimes the server gets too many requests at once, so just keep trying.');
